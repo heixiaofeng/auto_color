@@ -1,0 +1,98 @@
+# -------------------------------- Common --------------------------------
+Test common:
+  tags:
+    - flutter
+  stage: test
+  only:
+    - branches
+  script:
+    - flutter test --machine test/
+
+
+# -------------------------------- iOS --------------------------------
+Build ios:
+  tags:
+    - ios, flutter
+  stage: build
+  only:
+    - branches
+  except:
+    - /^release/.*/
+    - schedules
+  script:
+    - security set-key-partition-list -S "apple-tool:,apple:" -s -k $DEFAULT_KEYCHAIN_PASSWORD ~/Library/Keychains/login.keychain-db
+    - flutter build ios --release
+
+Build & Archive ios:
+  tags:
+    - ios, flutter
+  stage: deploy
+  only:
+    - schedules
+  script:
+    - security set-key-partition-list -S "apple-tool:,apple:" -s -k $DEFAULT_KEYCHAIN_PASSWORD ~/Library/Keychains/login.keychain-db
+    - flutter build ios --release
+    - ./export_ipa.sh build/ios/iphoneos/Runner.app UgeeNote.ipa
+    - ./export_ipa.sh build/dSYMs.noindex/App.framework.dSYM UgeeNote.dSYM
+  artifacts:
+    paths:
+      - ./*.ipa
+      - ./*.dSYM
+
+Deploy pgy ios:
+  tags:
+    - ios, flutter
+  stage: deploy
+  only:
+    - /^release/.*/
+  script:
+    - security set-key-partition-list -S "apple-tool:,apple:" -s -k $DEFAULT_KEYCHAIN_PASSWORD ~/Library/Keychains/login.keychain-db
+    - flutter build ios --release
+    - ./export_ipa.sh build/ios/iphoneos/Runner.app UgeeNote.ipa
+    # TODO 发布到蒲公英
+  artifacts:
+    paths:
+      - ./*.ipa     # TODO 临时提供下载链接
+      - ./*.dSYM
+
+
+# -------------------------------- Android --------------------------------
+Build android:
+  tags:
+    - android, flutter
+  stage: build
+  only:
+    - branches
+  except:
+    - /^release/.*/
+    - schedules
+  script:
+    - cd android && ./prepareRelease.sh && cd ..
+    - flutter build apk --release
+
+Build & Archive android:
+  tags:
+    - android, flutter
+  stage: deploy
+  only:
+    - schedules
+  script:
+    - cd android && ./prepareRelease.sh && cd ..
+    - flutter build appbundle --release
+  artifacts:
+    paths:
+      - build/app/outputs/bundle/release/app.aab
+
+Deploy pgy android:
+  tags:
+    - android, flutter
+  stage: deploy
+  only:
+    - /^release/.*/
+  script:
+    - cd android && ./prepareRelease.sh && cd ..
+    - flutter build apk --release
+    # TODO 发布到蒲公英
+  artifacts:
+    paths:
+      - build/app/outputs/apk/release/app-release.apk # TODO 临时提供下载链接

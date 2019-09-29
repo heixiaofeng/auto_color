@@ -1,0 +1,29 @@
+platform :ios do
+  desc "Build & deploy iOS full & light application"
+
+      deployTime = Time.new.strftime("%m月%d号%H:%M")
+
+      lane :build do
+       build_ios_app(
+          workspace: "ios/Runner.xcworkspace",
+          scheme: "Runner",
+          configuration: "Release",
+          export_options: {
+            method: "development" # 'ad-store', must be: ["app-store", "ad-hoc", "package", "enterprise", "development", "developer-id"]
+          }
+        )
+      end
+
+      lane :build_and_deploy do
+        build
+        pgyer(api_key: "08a52020623b04cac5e759b78f689142", user_key: "168c702b95318ac2be57a88707033430")
+      end
+
+      lane :notify_release do |options|
+        sh("../notifyRelease.sh", options[:wechatWorkSecret], "text", "XP-PenNote-iOS", "#{deployTime}", "https://www.pgyer.com/smartnoteugee")
+      end
+end
+
+platform :android do
+  desc "Build android application"
+end

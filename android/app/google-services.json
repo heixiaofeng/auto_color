@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "920573408342",
+    "firebase_url": "https://xp-pen-noteplus.firebaseio.com",
+    "project_id": "xp-pen-noteplus",
+    "storage_bucket": "xp-pen-noteplus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920573408342:android:6203b46646f5c161",
+        "android_client_info": {
+          "package_name": "com.ugee.smartnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920573408342-lsti6l2uo0dtk2880eq1djavfph3f3g1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ugee.smartnote",
+            "certificate_hash": "4883ec84f6eb2fff1fdd88b78212d99976529c5f"
+          }
+        },
+        {
+          "client_id": "920573408342-hd8gnb35a0ambtgj418aha1cqbs879ie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ugee.smartnote",
+            "certificate_hash": "e03e8d3d1768c163ffeedda46473d0c69d42161e"
+          }
+        },
+        {
+          "client_id": "920573408342-a83t7g2tc6ruoijei7k3ecj6lkqtdpc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0DKtkzavCE4e8ZLWcKI6qGal0JXs0NwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920573408342-a83t7g2tc6ruoijei7k3ecj6lkqtdpc6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "920573408342-shj3up7rge3mmmedkjrel42d0t4bmoos.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ugee.smartnote",
+                "app_store_id": "1435693584"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

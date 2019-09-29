@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>920573408342-shj3up7rge3mmmedkjrel42d0t4bmoos.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.920573408342-shj3up7rge3mmmedkjrel42d0t4bmoos</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>920573408342-hd8gnb35a0ambtgj418aha1cqbs879ie.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCTyD4XhdH5abGMxTBEUiQR_3QAieomxiU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>920573408342</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ugee.smartnote</string>
+	<key>PROJECT_ID</key>
+	<string>xp-pen-noteplus</string>
+	<key>STORAGE_BUCKET</key>
+	<string>xp-pen-noteplus.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:920573408342:ios:6203b46646f5c161</string>
+	<key>DATABASE_URL</key>
+	<string>https://xp-pen-noteplus.firebaseio.com</string>
+</dict>
+</plist>
